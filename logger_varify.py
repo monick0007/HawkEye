@@ -11,7 +11,7 @@ def check_keylog():
         line_countf2 = len(nonempty_lines1)
         print(line_countf1,line_countf2)
         f1=open("log.txt","r")
-
+        lst=[]
         for i in range(line_countf1):
             s1=f1.readline().lower()
             f2=open("exambank.txt","r")
@@ -19,7 +19,8 @@ def check_keylog():
                 s2=f2.readline().lower().strip('\n')
                 print(s1,s2)
                 if s2 in s1:
-                    final2="you are cheating"+"["+s2+"]"
-        return final2        
-               
+                    lst.append(s2)
+            final2="you are cheating with {}".format(lst)
+
+        return final2               
      
